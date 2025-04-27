@@ -1,8 +1,5 @@
-#include <QObject>
 #include <QtDBus>
-#include <QDir>
-#include <QFile>
-#include <QTextStream>
+#include "ConfigObject.h"
 
 class ConfigurationManager : public QObject {
     Q_OBJECT
@@ -11,9 +8,8 @@ class ConfigurationManager : public QObject {
 public:
     explicit ConfigurationManager(QObject *parent = nullptr);
 
-
 private:
-    QStringList configs;
+    QMap<QString, ConfigObject*> configs;
 
     void loadConfigs(const QString &path);
 };

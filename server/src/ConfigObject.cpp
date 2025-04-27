@@ -4,6 +4,10 @@ ConfigObject::ConfigObject(QObject *parent, const QString &name, const QVariantM
 name_(name),config_(config){}
 
 void ConfigObject::ChangeConfiguration(const QString &key, const QVariant &variant) {
+    if (config_.find(key)==config_.end()) {
+        sendErrorReply(QDBusError::InvalidArgs, "Invalid key specified");
+        return;
+    }
     config_[key]=variant;
     emit configurationChanged(config_);
 }
