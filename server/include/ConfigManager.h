@@ -1,4 +1,3 @@
-#include <QtDBus>
 #include "ConfigObject.h"
 
 class ConfigurationManager : public QObject {

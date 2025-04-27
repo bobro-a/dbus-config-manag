@@ -18,7 +18,7 @@ void ConfigurationManager:: loadConfigs(const QString &path) {
                 QVariantMap config=jsonDoc.object().toVariantMap();
                 QString appName=filename;
                 appName.chop(5);
-                QString fullPath="~/com.system.configurationManager/Application/"+appName;
+                QString fullPath="~/com/system/configurationManager/Application/"+appName;
                 ConfigObject *object=new ConfigObject(this,appName,config);
                 conn.registerObject(fullPath,object,QDBusConnection::ExportAllSlots | QDBusConnection::ExportAllSignals);
                 configs.insert(appName,object);
