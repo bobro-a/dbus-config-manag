@@ -1,4 +1,6 @@
 #include "ConfigObject.h"
+#include <QObject>
+#pragma once
 
 class ConfigurationManager : public QObject {
     Q_OBJECT
