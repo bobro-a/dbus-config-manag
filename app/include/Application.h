@@ -10,7 +10,7 @@ public:
     explicit Application(QObject *parent = nullptr);
 
 public slots:
-    void newData();
+    void newData(const QVariantMap& newData);
     void printData();
 
 private:
@@ -18,7 +18,7 @@ private:
 
     QVariantMap data_;
     QString filename_ = "confManagerApplication1";
-    QString pathDir_ = "com.system.configurationManager/Application";
+    QString pathDir_ = "com.system.configurationManager";
     QTimer timer_;
     int currentTimeout;
 };
