@@ -20,9 +20,9 @@ void Application::printData() {
 }
 
 void Application::loadStartData() {
-    QDir dir(QDir::homePath() + "/" + pathDir_);
-    if (!dir.exists()) dir.mkpath(pathDir_);
-    QFile file(QDir::homePath() + "/" + pathDir_ + "/" + filename_ + ".json");
+    QDir dir(QDir::homePath() + "/" + SERVER_NAME);
+    if (!dir.exists()) dir.mkpath(SERVER_NAME);
+    QFile file(QDir::homePath() + "/" + SERVER_NAME + "/" + APP_NAME + ".json");
     if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
         QByteArray data = file.readAll();
         QJsonDocument jsonDoc = QJsonDocument::fromJson(data);

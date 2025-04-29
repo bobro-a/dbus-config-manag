@@ -13,10 +13,11 @@ set(SOURCES
 
 set(HEADERS
         include/Application.h
+        ../Constants.h
 )
 
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
 
-target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_SOURCE_DIR}/include)
+target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_SOURCE_DIR}/include ${CMAKE_SOURCE_DIR}/../)
 
 target_link_libraries(${PROJECT_NAME} Qt6::Core Qt6::DBus)

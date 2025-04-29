@@ -2,7 +2,7 @@
 
 
 ConfigurationManager::ConfigurationManager(QObject *parent) : QObject(parent) {
-    loadConfigs(QDir::homePath() + "/" + dirPath_);
+    loadConfigs(QDir::homePath() + "/" + SERVER_NAME + "/");
 }
 
 void ConfigurationManager::loadConfigs(const QString &path) {
@@ -18,7 +18,7 @@ void ConfigurationManager::loadConfigs(const QString &path) {
                 QVariantMap config = jsonDoc.object().toVariantMap();
                 QString appName = filename;
                 appName.chop(5);
-                QString fullPath = "/com/system/configurationManager/Application/" + appName;
+                QString fullPath = pathToApp_ + appName;
                 ConfigObject *object = new ConfigObject(this, appName, config);
                 conn.registerObject(fullPath, object,
                                     QDBusConnection::ExportAllSlots | QDBusConnection::ExportAllSignals);
