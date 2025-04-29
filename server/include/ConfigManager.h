@@ -1,7 +1,7 @@
+#pragma once
 #include "ConfigObject.h"
 #include "Constants.h"
 #include <QObject>
-#pragma once
 
 class ConfigurationManager : public QObject {
     Q_OBJECT
@@ -15,6 +15,5 @@ private:
 
     void loadConfigs(const QString &path);
 
-    // QString dirPath_ = SERVER_NAME + "/";
     QString pathToApp_ = "/com/system/configurationManager/Application/";
 };

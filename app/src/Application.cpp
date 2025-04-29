@@ -1,4 +1,5 @@
 #include "Application.h"
+#include <iostream>
 
 Application::Application(QObject *parent): QObject(parent) {
     loadStartData();

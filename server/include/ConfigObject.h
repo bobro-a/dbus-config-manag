@@ -1,5 +1,5 @@
-#include <QtDBus>
 #pragma once
+#include <QtDBus>
 
 class ConfigObject : public QObject, protected QDBusContext {
     Q_OBJECT
