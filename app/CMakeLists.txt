@@ -2,15 +2,21 @@ CMAKE_MINIMUM_REQUIRED(VERSION 3.28)
 PROJECT(confManagerApplication1)
 
 set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_AUTOMOC ON)
 
-include_directories(include)
+find_package(Qt6 REQUIRED COMPONENTS Core DBus)
 
 set(SOURCES
         main.cpp
         src/Application.cpp
 )
 
-add_executable(${PROJECT_NAME} ${SOURCES})
+set(HEADERS
+        include/Application.h
+)
 
-find_package(Qt6 REQUIRED COMPONENTS Core DBus)
+add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
+
+target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_SOURCE_DIR}/include)
+
 target_link_libraries(${PROJECT_NAME} Qt6::Core Qt6::DBus)
