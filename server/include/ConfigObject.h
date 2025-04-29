@@ -9,7 +9,7 @@ public:
     explicit ConfigObject(QObject *parent, const QString &name, const QVariantMap &config);
 
 public slots:
-    void ChangeConfiguration(const QString &key, const QVariant &variant);
+    Q_NOREPLY void ChangeConfiguration(const QString &key, const QDBusVariant &variant);
 
     QVariantMap GetConfiguration();
 
