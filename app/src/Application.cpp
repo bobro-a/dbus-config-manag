@@ -9,7 +9,7 @@ Application::Application(QObject *parent): QObject(parent) {
 
 void Application::newData() {
     QDBusInterface interface("com.system.configurationManager",
-                             "com/system/configurationManager/Application/confManagerApplication1",
+                             "/com/system/configurationManager/Application/confManagerApplication1",
                              "com.system.configurationManager.Application.Configuration");
     QDBusReply<QVariantMap> qReply(interface.call("GetConfiguration"));
     if (qReply.isValid())
