@@ -13,4 +13,6 @@ private:
     QMap<QString, ConfigObject*> configs;
 
     void loadConfigs(const QString &path);
+
+    QString dirPath_="com.system.configurationManager/";
 };
