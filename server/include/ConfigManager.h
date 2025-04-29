@@ -10,9 +10,9 @@ public:
     explicit ConfigurationManager(QObject *parent = nullptr);
 
 private:
-    QMap<QString, ConfigObject*> configs;
+    QMap<QString, ConfigObject *> configs;
 
     void loadConfigs(const QString &path);
 
-    QString dirPath_="com.system.configurationManager/";
+    QString dirPath_ = "com.system.configurationManager/";
 };
